@@ -5,7 +5,7 @@ import NewNoteInput from './components/NewNoteInput';
 function App() {
   return (
     <div className="wrapper">
-      <NewNoteInput />
+      <NewNoteInput addNote={alert} />
       <hr/>
       <ul>
           <li>Some Note</li>
