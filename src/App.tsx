@@ -1,13 +1,11 @@
 import React from 'react';
 import './App.css';
+import NewNoteInput from './NewNoteInput';
 
 function App() {
   return (
     <div className="wrapper">
-      <div>
-        <input type="text" name="note" placeholder="Note" />
-        <button>Add Note</button>
-      </div>
+      <NewNoteInput />
       <hr/>
       <ul>
           <li>Some Note</li>
