@@ -4,16 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-
-const store = createStore( () => ({
-   birds: [
-     {
-       name: 'robin',
-       views: 1
-     }
-   ]
-} ))
+import { store } from "./functions/store"
 
 ReactDOM.render(
   <React.StrictMode>
