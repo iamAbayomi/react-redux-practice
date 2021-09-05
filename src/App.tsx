@@ -1,24 +1,17 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import './App.css';
 
 function App() {
-
-  const birds = useSelector(state => state.birds)
-
   return (
     <div className="wrapper">
-      <h1>Bird List</h1>
+      <div>
+        <input type="text" name="note" placeholder="Note" />
+        <button>Add Note</button>
+      </div>
+      <hr/>
       <ul>
-        {
-          birds.map(birds =>(
-            <li key={birds.name}>
-              
-              </li>
-          ))
-        }
+          <li>Some Note</li>
       </ul>
-
     </div>
   );
 }
