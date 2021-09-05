@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import NewNoteInput from './NewNoteInput';
+import NewNoteInput from './components/NewNoteInput';
 
 function App() {
   return (
