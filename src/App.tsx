@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { NewNoteInput } from './components/NewNoteInput';
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { NotesState } from "./functions/notesReducer"
 
 function App() {
@@ -9,9 +9,15 @@ function App() {
     (state) => state.notes
   )
 
+  const dispatch = useDispatch()
+
+  const onAddNote = (note: string) => {
+    dispatch({ type: "ADD_NOTE", payload: note })
+  }
+
   return (
     <div className="wrapper">
-      <NewNoteInput addNote={alert} />
+      <NewNoteInput addNote={onAddNote} />
       <hr/>
       <ul>
           {
