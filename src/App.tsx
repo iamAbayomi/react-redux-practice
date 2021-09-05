@@ -1,14 +1,24 @@
 import React from 'react';
 import './App.css';
-import NewNoteInput from './components/NewNoteInput';
+import { NewNoteInput } from './components/NewNoteInput';
+import { useSelector } from "react-redux";
+import { NotesState } from "./functions/notesReducer"
 
 function App() {
+  const notes = useSelector<NotesState, NotesState["notes"]>(
+    (state) => state.notes
+  )
+
   return (
     <div className="wrapper">
       <NewNoteInput addNote={alert} />
       <hr/>
       <ul>
-          <li>Some Note</li>
+          {
+            notes.map((note) => {
+              return <li key={note}> {note} </li>
+            })
+          }
       </ul>
     </div>
   );
