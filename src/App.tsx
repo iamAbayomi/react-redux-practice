@@ -3,6 +3,7 @@ import './App.css';
 import { NewNoteInput } from './components/NewNoteInput';
 import { useSelector, useDispatch } from "react-redux";
 import { NotesState } from "./functions/notesReducer"
+import { addNote } from "./functions/actions";
 
 function App() {
   const notes = useSelector<NotesState, NotesState["notes"]>(
@@ -12,7 +13,7 @@ function App() {
   const dispatch = useDispatch()
 
   const onAddNote = (note: string) => {
-    dispatch({ type: "ADD_NOTE", payload: note })
+    dispatch(addNote(note))
   }
 
   return (
