@@ -4,7 +4,7 @@ import React, { ChangeEvent, useState } from 'react'
 function App(){
     const [note, setNote] = useState("")
 
-    let notes: string[] 
+    let notes: string[] = []
 
     const updateNote = (event: ChangeEvent<HTMLInputElement>) =>{
             setNote(event.target.value)
@@ -30,8 +30,11 @@ function App(){
             </div>
             <hr/>
             <ul>
-                <li>{note}</li>
-
+                {
+                    notes.map((notes) => 
+                            <li>{note}</li>
+                    )
+                }
             </ul>
         </div>
     )
