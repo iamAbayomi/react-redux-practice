@@ -7,6 +7,7 @@ function NoteInput(){
                     name="note"
                     placeholder="Note"
                 />
+                <button>Add</button>
             </div>
         </div>
     )

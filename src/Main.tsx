@@ -5,7 +5,7 @@ function App(){
     return(
         <div>
             <NoteInput />
-            <button>Add</button>
+            <hr/>
         </div>
     )
 }
