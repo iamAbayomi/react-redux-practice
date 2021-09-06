@@ -4,7 +4,7 @@ interface NoteInputProps{
     setNote(note: string) : void
 }
 
-function NoteInput(setNote : NoteInputProps)  {
+function NoteInput(setNote: React.FC<NoteInputProps>)  {
     return(
         <div>
             <div>
