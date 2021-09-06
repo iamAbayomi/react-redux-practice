@@ -1,4 +1,10 @@
-function NoteInput(){
+import React, { ChangeEvent } from "react"
+
+interface NoteInputProps{
+    setNote(note: string) : void
+}
+
+function NoteInput(setNote : NoteInputProps)  {
     return(
         <div>
             <div>
