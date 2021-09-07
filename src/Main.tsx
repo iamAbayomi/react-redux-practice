@@ -3,8 +3,8 @@ import React, { ChangeEvent, useState } from 'react'
 
 function App(){
     const [note, setNote] = useState("")
-    const [notes, setNotes] = useState([""])
-    let notesTemp: string[] = []
+    const [notes, setNotes] = useState<string[]>([])
+    let notesTemp: string[] = ['first string']
 
     const updateNote = (event: ChangeEvent<HTMLInputElement>) =>{
             setNote(event.target.value)
@@ -12,9 +12,13 @@ function App(){
 
     function addToNoteString (){
         notesTemp.push(note)
-        setNotes(notesTemp)
-        console.log("I am here" + note)
-        console.log("What is in " + notes)
+        setNotes([
+            ...notes,
+            note
+        ])
+        console.log("Note contents" + note)
+        console.log("Notes contents " + notes)
+        console.log("NotesTemp Contents" + notesTemp)
         setNote("")
     }
 
