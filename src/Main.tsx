@@ -3,15 +3,19 @@ import React, { ChangeEvent, useState } from 'react'
 
 function App(){
     const [note, setNote] = useState("")
-
-    let notes: string[] = []
+    const [notes, setNotes] = useState([""])
+    let notesTemp: string[] = []
 
     const updateNote = (event: ChangeEvent<HTMLInputElement>) =>{
             setNote(event.target.value)
     }
 
-    function addToNoteString (note: string){
-        notes.push(note)
+    function addToNoteString (){
+        notesTemp.push(note)
+        setNotes(notesTemp)
+        console.log("I am here" + note)
+        console.log("What is in " + notes)
+        setNote("")
     }
 
     return(
@@ -24,18 +28,17 @@ function App(){
                     name="note"
                     placeholder="Note"
                 />
-                <button>
-                    Add
-                </button>
+                <button onClick={addToNoteString}>Add String</button>
             </div>
             <hr/>
             <ul>
                 {
-                    notes.map((notes) => 
-                            <li>{note}</li>
+                    notes.map((note) => 
+                            <li key={note} >{note}</li>
                     )
                 }
             </ul>
+            
         </div>
     )
 }
